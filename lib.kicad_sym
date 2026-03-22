@@ -2623,8 +2623,26 @@
 					)
 				)
 			)
+			(pin output line
+				(at 15.24 2.54 180)
+				(length 2.54)
+				(name "MOTION"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
 			(pin input line
-				(at 15.24 1.27 180)
+				(at 15.24 -1.27 180)
 				(length 2.54)
 				(name "NCS"
 					(effects
@@ -2642,7 +2660,7 @@
 				)
 			)
 			(pin output line
-				(at 15.24 -1.27 180)
+				(at 15.24 -3.81 180)
 				(length 2.54)
 				(name "MISO"
 					(effects
@@ -2660,7 +2678,7 @@
 				)
 			)
 			(pin input line
-				(at 15.24 -3.81 180)
+				(at 15.24 -6.35 180)
 				(length 2.54)
 				(name "MOSI"
 					(effects
@@ -2678,7 +2696,7 @@
 				)
 			)
 			(pin input line
-				(at 15.24 -6.35 180)
+				(at 15.24 -8.89 180)
 				(length 2.54)
 				(name "SCLK"
 					(effects
@@ -2688,24 +2706,6 @@
 					)
 				)
 				(number "10"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin output line
-				(at 15.24 -8.89 180)
-				(length 2.54)
-				(name "MOTION"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "9"
 					(effects
 						(font
 							(size 1.27 1.27)
