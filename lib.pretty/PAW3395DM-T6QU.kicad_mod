@@ -270,15 +270,4 @@
 		(uuid "18b3f7a8-5594-45bc-a9ce-dcd223595669")
 	)
 	(embedded_fonts no)
-	(model "C:/Users/Aiym/Downloads/PAW3395DM-T6QU_kicad_optical_origin.step"
-		(offset
-			(xyz 0 0.5 -1.5)
-		)
-		(scale
-			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz -0 -0 -0)
-		)
-	)
 )

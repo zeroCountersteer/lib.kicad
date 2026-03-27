@@ -1,0 +1,210 @@
+(footprint "RotaryEncoder_Horizontal"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Rotary Encoder")
+	(tags "Rotary Encoder Gaming Mouse")
+	(property "Reference" "REF**"
+		(at 0 -5.08 0)
+		(layer "F.SilkS")
+		(uuid "97569d6c-af29-4450-a239-5f3f21df234b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "RotaryEncoder_Horizontal"
+		(at 0 2.032 0)
+		(layer "F.Fab")
+		(uuid "28ceaa1e-1f23-4d44-85e2-99d3b064dcbe")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "43c5fe5f-d4fd-4f4f-b0b2-f4849bc1de00")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1d2f663a-7a10-4463-aeac-ce21c63a15e4")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start 5.02 -4.32)
+		(end 5.02 -3.52)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "0d59a5c0-9809-488d-b11f-d64be5bfde93")
+	)
+	(fp_line
+		(start 0 1.524)
+		(end -0.508 2.032)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "144ddf16-33f5-42c6-a01d-b9f42fc20474")
+	)
+	(fp_line
+		(start 0 1.524)
+		(end 0 3.302)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "27098d8a-4f6f-4524-ae14-e8de434887df")
+	)
+	(fp_line
+		(start 0 1.524)
+		(end 0.508 2.032)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "dc55ff4e-f34a-4341-9422-4ecd1bfaf096")
+	)
+	(fp_line
+		(start -4.9 -4.2)
+		(end 4.9 -4.2)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "63a54fe9-6411-498e-8e32-3728635e7e73")
+	)
+	(fp_line
+		(start -4.9 0.95)
+		(end -4.9 -4.2)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "ce3301ea-85f2-44d3-992d-1f74c7ae1026")
+	)
+	(fp_line
+		(start 4.9 -4.2)
+		(end 4.9 0.95)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "8dea2c82-69ba-41c7-8ee3-8611a664fb49")
+	)
+	(fp_line
+		(start 4.9 0.95)
+		(end -4.9 0.95)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "70d4092d-f015-4e50-9ff8-c997c337a68e")
+	)
+	(fp_text user "Shaft insert"
+		(at 0 3.302 0)
+		(unlocked yes)
+		(layer "Dwgs.User")
+		(uuid "dbd6862d-9e89-478b-be3b-a685ab41ece5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 -2 0)
+		(layer "F.Fab")
+		(uuid "907dcd9a-72c2-4a3f-97fe-23c9322e7833")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "A" thru_hole circle
+		(at -2.5 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "3f8aa139-03e1-4563-b530-3fe17fdfe5e8")
+	)
+	(pad "B" thru_hole circle
+		(at 0 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "ce579763-ae6a-4adf-92dc-884957c160f7")
+	)
+	(pad "C" thru_hole circle
+		(at 2.5 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "ca1c0f70-c329-4c87-b7d3-ad9f87dfa164")
+	)
+	(pad "MP" thru_hole oval
+		(at -4.8 -2 90)
+		(size 3.2 1.7)
+		(drill oval 2.5 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "11b5f1e1-9a31-4948-8b77-a1f1cddc953d")
+	)
+	(pad "MP" thru_hole oval
+		(at 4.8 -2 90)
+		(size 3.2 1.7)
+		(drill oval 2.5 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "6788ec60-9773-447d-baa7-935437aa08c5")
+	)
+	(embedded_fonts no)
+	(model "C:/Users/az/Documents/GitHub/lib.KiCAD/lib.3dmodels/EC10E1220503.STEP"
+		(offset
+			(xyz 0 -0.25 11)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -0)
+		)
+	)
+)
