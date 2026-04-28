@@ -1,0 +1,254 @@
+(footprint "Omron D2LS-21"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at -2.975 -3.635 0)
+		(layer "F.SilkS")
+		(uuid "4d52570a-92d8-40d6-891b-a0bf05d85e27")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Omron D2LS-21"
+		(at 0.2 3.635 0)
+		(layer "F.Fab")
+		(uuid "4067a058-369e-4528-bf3b-9e89f0f118e9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b6da0726-91a4-4429-aeb5-596dd6ee73c6")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "604c28df-5132-4a93-adc6-010370463c23")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -4.3 -2.4)
+		(end -4.3 -1.92)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "fc52a3bf-94db-438b-b11a-389efa2f6d6d")
+	)
+	(fp_line
+		(start -4.3 2.4)
+		(end -4.3 0.92)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "8b14d947-74fb-4659-86d8-6460f4cf7383")
+	)
+	(fp_line
+		(start -4.3 2.4)
+		(end 4.3 2.4)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4feb7dff-a92d-4faf-96cd-30a5d642b43d")
+	)
+	(fp_line
+		(start 4.3 -2.4)
+		(end -4.3 -2.4)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a63d6210-74be-47d4-a191-33074a9e1de2")
+	)
+	(fp_line
+		(start 4.3 -1.92)
+		(end 4.3 -2.4)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "fe7f3829-6370-483c-b04c-4b23c1045818")
+	)
+	(fp_line
+		(start 4.3 2.4)
+		(end 4.3 0.92)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4fb30e39-5e32-493d-86ae-5a0f16913440")
+	)
+	(fp_circle
+		(center -6.5 -0.5)
+		(end -6.4 -0.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "c594dc21-44ad-470d-8e7a-b062def19e9f")
+	)
+	(fp_line
+		(start -6.15 -2.65)
+		(end -6.15 2.65)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "35139a83-564a-472f-97cb-fb6a4e9bf16c")
+	)
+	(fp_line
+		(start -6.15 2.65)
+		(end 6.15 2.65)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "03e11097-fbd8-433c-89c6-5ff91ee4dbf5")
+	)
+	(fp_line
+		(start 6.15 -2.65)
+		(end -6.15 -2.65)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "209042f0-4889-4d4c-bdb4-a214bb55ab0c")
+	)
+	(fp_line
+		(start 6.15 2.65)
+		(end 6.15 -2.65)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "b52840d0-ec1b-4390-88f3-753bd010ddd4")
+	)
+	(fp_line
+		(start -4.3 -2.4)
+		(end -4.3 2.4)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "2314e34c-7270-4e44-b282-de24b0e8e7a5")
+	)
+	(fp_line
+		(start -4.3 2.4)
+		(end 4.3 2.4)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "8d691d14-2d70-47cd-b53a-8d05e2190c82")
+	)
+	(fp_line
+		(start 4.3 -2.4)
+		(end -4.3 -2.4)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "8e2db502-cdae-4b42-8151-c1363c6b9b37")
+	)
+	(fp_line
+		(start 4.3 2.4)
+		(end 4.3 -2.4)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "4366da42-51a2-4530-b968-889647c1004a")
+	)
+	(fp_circle
+		(center -6.5 -0.5)
+		(end -6.4 -0.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "05fe08cf-392d-4d48-a8f4-fe19865a57ea")
+	)
+	(pad "" np_thru_hole circle
+		(at -2 0)
+		(size 1.15 1.15)
+		(drill 1.15)
+		(layers "*.Cu" "*.Mask")
+		(uuid "3f3d8b78-2ce0-4696-bf4d-99bbc0967c14")
+	)
+	(pad "" np_thru_hole circle
+		(at 2 0)
+		(size 1.15 1.15)
+		(drill 1.15)
+		(layers "*.Cu" "*.Mask")
+		(uuid "c6272141-7e6c-430c-883a-08873c65f432")
+	)
+	(pad "COM" smd rect
+		(at -5.15 -0.5)
+		(size 1.5 2.2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.102)
+		(uuid "4797b738-1048-4d1e-9100-1bd8821efe27")
+	)
+	(pad "NO" smd rect
+		(at 5.15 -0.5)
+		(size 1.5 2.2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.102)
+		(uuid "d9cfcf76-690d-4b93-8e0c-d9c46dda79bb")
+	)
+	(embedded_fonts no)
+	(model "C:/Users/az/Documents/GitHub/lib.KiCAD/lib.3dmodels/D2LS-21--3DModel-STEP-273799.STEP"
+		(offset
+			(xyz -2 0.25 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 -0 -0)
+		)
+	)
+)
