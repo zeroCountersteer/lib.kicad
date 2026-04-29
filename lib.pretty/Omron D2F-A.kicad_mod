@@ -1,0 +1,201 @@
+(footprint "Omron D2F-A"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "1A 30V SPDT Micro Switch rated for one million cycles, W12.7xD5.7xH6.6, https://www.helloxkb.com/public/images/pdf/DMX-XXXC-X.pdf")
+	(tags "SPDT endstop limit switch clockwise hook lever XKB DM1-16UC-1")
+	(property "Reference" "REF**"
+		(at 5.08 -7 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "22777c1e-f905-4b39-a0e9-36edf6cc4142")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Omron D2F-A"
+		(at 5.08 2.68 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "0dae870a-796b-4dd1-92b9-a9e82f89c02f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "67c63628-f8b1-49e9-af78-9ba7be65b504")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b21beff9-ba51-4ae4-aa72-e0a9f80d3099")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -1.778 -9.1)
+		(end -1.778 -0.495)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a311c186-d906-4110-b2ec-2436b685d2a2")
+	)
+	(fp_line
+		(start 1.27 -0.495)
+		(end 3.81 -0.495)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4ca41279-65f1-4e77-957b-b1a4a9bf8f6b")
+	)
+	(fp_line
+		(start 8.89 -0.495)
+		(end 6.35 -0.495)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b8f06177-936b-4a01-8e81-3d1c4648a907")
+	)
+	(fp_line
+		(start 11.938 -9.1)
+		(end -1.778 -9.1)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4d2b6283-c41d-4850-b619-e15ccdd45963")
+	)
+	(fp_line
+		(start 11.938 -0.495)
+		(end 11.938 -9.1)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "61eb667c-09ec-40ae-9e9a-37db6a55efc3")
+	)
+	(fp_rect
+		(start 3.6 -9.5)
+		(end 2.4 -8.7)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "760af727-c55b-4436-87fc-3b0e8939b16b")
+	)
+	(fp_line
+		(start -0.1 -7.8)
+		(end -0.1 -9.1)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "Dwgs.User")
+		(uuid "b42e538e-f3f5-4e38-9c3a-8abc034be6e1")
+	)
+	(fp_rect
+		(start -1.8 -9.1)
+		(end 12 -2.3)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "0325df64-7ab9-49e3-b815-a57508b0ba29")
+	)
+	(fp_rect
+		(start -1.32 -9)
+		(end 11.48 -2.4)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "9a946988-1895-4917-973a-04a857bc4ae7")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 5.08 -4.94 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "167f98b0-be03-4dee-b8c7-673494fdc437")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 2 2)
+		(drill 1.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "68ab3a2f-bbfa-4905-a847-e28b8d135ce6")
+	)
+	(pad "2" thru_hole circle
+		(at 5.08 0)
+		(size 2 2)
+		(drill 1.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "fbb493fb-51da-4ab1-9d6b-0d54e7e287b6")
+	)
+	(pad "3" thru_hole circle
+		(at 10.16 0)
+		(size 2 2)
+		(drill 1.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "cbdbb100-765d-4b9d-a80a-ae02b35cc960")
+	)
+	(embedded_fonts no)
+	(model "${KICAD10_3DMODEL_DIR}/Button_Switch_THT.3dshapes/SW_XKB_DM1-16UC-1.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
