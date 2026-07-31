@@ -1,0 +1,68 @@
+name: Build KiCad PCM package
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pcm-package-main
+  cancel-in-progress: true
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set package version
+        id: version
+        shell: bash
+        run: |
+          VERSION="0.0.${GITHUB_RUN_NUMBER}"
+          SHORT_SHA="${GITHUB_SHA::7}"
+          FILE="lib.KiCAD-${VERSION}-${SHORT_SHA}.zip"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "file=${FILE}" >> "$GITHUB_OUTPUT"
+
+      - name: Build package
+        shell: bash
+        run: |
+          python3 scripts/build_pcm_package.py \
+            --repo . \
+            --metadata pcm/metadata.json \
+            --version "${{ steps.version.outputs.version }}" \
+            --output "dist/${{ steps.version.outputs.file }}"
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kicad-pcm-package
+          path: |
+            dist/*.zip
+            dist/*.sha256
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Replace continuous release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          if gh release view continuous >/dev/null 2>&1; then
+            gh release delete continuous --yes --cleanup-tag
+          fi
+
+          gh release create continuous \
+            --target "$GITHUB_SHA" \
+            --title "Latest automatic KiCad package" \
+            --notes "Automatically generated from commit $GITHUB_SHA. This prerelease is replaced after every push to main." \
+            --prerelease \
+            dist/*.zip \
+            dist/*.sha256
