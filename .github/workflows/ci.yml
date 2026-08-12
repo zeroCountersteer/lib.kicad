@@ -1,39 +1,42 @@
-name: Validate and build KiCad library
+name: KiCad library
 
 on:
   push:
-    branches: [main]
-    tags: ['v*.*.*']
+    branches:
+      - main
+    tags:
+      - 'v*.*.*'
   pull_request:
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 jobs:
   validate:
+    if: ${{ !startsWith(github.ref, 'refs/tags/') }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - name: Validate library
-        run: python3 scripts/validate_library.py
-      - name: Validate PCM index fields
-        run: python3 scripts/validate_pcm_repository.py
-      - name: Build test PCM package
+        run: |
+          python3 scripts/validate_library.py
+          python3 scripts/validate_pcm_repository.py
+      - name: Build test package
         run: |
           mkdir -p dist
-          VERSION="${GITHUB_REF_NAME#v}"
-          [[ "$VERSION" =~ ^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || VERSION="0.0.${GITHUB_RUN_NUMBER}"
-          python3 scripts/build_pcm_package.py --repo . --metadata pcm/metadata.json \
-            --version "$VERSION" --output "dist/lib.KiCAD-${VERSION}.zip"
+          VERSION="0.0.${GITHUB_RUN_NUMBER}"
+          python3 scripts/build_pcm_package.py \
+            --repo . \
+            --metadata pcm/metadata.json \
+            --version "$VERSION" \
+            --output "dist/lib.KiCAD-$VERSION.zip"
       - uses: actions/upload-artifact@v4
         with:
-          name: kicad-pcm-package
-          path: dist/*
+          name: kicad-pcm-test-package
+          path: dist/
 
   release:
-    if: startsWith(github.ref, 'refs/tags/v')
-    needs: validate
+    if: ${{ startsWith(github.ref, 'refs/tags/v') }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -44,34 +47,66 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+
       - name: Validate tag
         env:
           TAG: ${{ github.ref_name }}
-        run: [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)([-+].*)?$ ]]
+        run: |
+          [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)([-+].*)?$ ]]
+
+      - name: Validate library
+        run: python3 scripts/validate_library.py
+
       - name: Build immutable package
         run: |
           mkdir -p dist
-          python3 scripts/build_pcm_package.py --repo . --metadata pcm/metadata.json \
-            --version "${GITHUB_REF_NAME#v}" --output "dist/lib.KiCAD-${GITHUB_REF_NAME#v}.zip"
-      - name: Create release and upload asset
+          VERSION="${GITHUB_REF_NAME#v}"
+          python3 scripts/build_pcm_package.py \
+            --repo . \
+            --metadata pcm/metadata.json \
+            --version "$VERSION" \
+            --output "dist/lib.KiCAD-$VERSION.zip"
+
+      - name: Create release and upload package
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 || \
-            gh release create "$GITHUB_REF_NAME" --title "lib.KiCAD ${GITHUB_REF_NAME#v}" --generate-notes
-          gh release upload "$GITHUB_REF_NAME" "dist/lib.KiCAD-${GITHUB_REF_NAME#v}.zip" --clobber
+          VERSION="${GITHUB_REF_NAME#v}"
+          if ! gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release create "$GITHUB_REF_NAME" \
+              --title "lib.KiCAD $VERSION" \
+              --generate-notes
+          fi
+          gh release upload "$GITHUB_REF_NAME" \
+            "dist/lib.KiCAD-$VERSION.zip" \
+            --clobber
+
       - name: Collect release history
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh api --paginate --slurp "repos/${GITHUB_REPOSITORY}/releases?per_page=100" > dist/releases.json
-      - name: Generate v2 PCM Pages index
+        run: |
+          gh api --paginate --slurp \
+            "repos/${GITHUB_REPOSITORY}/releases?per_page=100" \
+            > dist/releases.json
+
+      - name: Generate PCM v2 Pages index
         run: |
           mkdir -p site
-          python3 scripts/generate_pcm_repository.py --metadata pcm/metadata.json \
-            --output-dir site --version "${GITHUB_REF_NAME#v}" \
-            --zip "dist/lib.KiCAD-${GITHUB_REF_NAME#v}.zip" \
-            --asset-url "https://github.com/${GITHUB_REPOSITORY}/releases/download/${GITHUB_REF_NAME}/lib.KiCAD-${GITHUB_REF_NAME#v}.zip" \
+          VERSION="${GITHUB_REF_NAME#v}"
+          python3 scripts/generate_pcm_repository.py \
+            --metadata pcm/metadata.json \
+            --output-dir site \
+            --version "$VERSION" \
+            --zip "dist/lib.KiCAD-$VERSION.zip" \
+            --asset-url "https://github.com/${GITHUB_REPOSITORY}/releases/download/${GITHUB_REF_NAME}/lib.KiCAD-$VERSION.zip" \
             --releases-json dist/releases.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          for name in ('repository.json', 'packages.json'):
+              json.loads((Path('site') / name).read_text())
+          PY
+
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
