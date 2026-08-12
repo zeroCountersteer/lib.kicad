@@ -1,0 +1,34 @@
+{
+  "$schema": "https://go.kicad.org/pcm/schemas/v2#/definitions/PackageArray",
+  "packages": [
+    {
+      "name": "lib.KiCAD",
+      "description": "KiCad 10+ symbols, footprints and 3D models.",
+      "description_full": "A maintained personal KiCad library with original content and clearly documented third-party material. Includes audited Allwinner A33 and X-Powers AXP223 components derived from A33-MiniDev.",
+      "identifier": "com.github.zerocountersteer.lib-kicad",
+      "type": "library",
+      "author": {
+        "name": "zeroCountersteer"
+      },
+      "maintainer": {
+        "name": "zeroCountersteer"
+      },
+      "license": "Mixed; see LICENSE and THIRD_PARTY_NOTICES.md",
+      "resources": {
+        "homepage": "https://github.com/zeroCountersteer/lib.KiCAD"
+      },
+      "kicad_version": "10.0",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "status": "stable",
+          "kicad_version": "10.0",
+          "download_url": "https://github.com/zeroCountersteer/lib.KiCAD/releases/download/v0.1.0/lib.KiCAD-0.1.0.zip",
+          "download_sha256": "577eaccc620600cef3db0f0f700aa316e8a17d2c0a4fa3cd66aead538ef2788f",
+          "download_size": 25994299,
+          "install_size": 172094913
+        }
+      ]
+    }
+  ]
+}

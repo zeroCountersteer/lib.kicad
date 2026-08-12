@@ -1,0 +1,16 @@
+{
+  "$schema": "https://go.kicad.org/pcm/schemas/v2#/definitions/Repository",
+  "schema_version": 2,
+  "name": "zeroCountersteer lib.KiCAD",
+  "maintainer": {
+    "name": "zeroCountersteer",
+    "contact": {
+      "web": "https://github.com/zeroCountersteer/lib.KiCAD"
+    }
+  },
+  "packages": {
+    "url": "https://zerocountersteer.github.io/lib.KiCAD/packages.json",
+    "update_time_utc": "2026-08-12 15:44:37",
+    "update_timestamp": 1786549477
+  }
+}

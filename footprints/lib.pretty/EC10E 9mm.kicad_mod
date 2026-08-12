@@ -1,0 +1,222 @@
+(footprint "EC10E 9mm"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Rotary Encoder")
+	(tags "Rotary Encoder Gaming Mouse")
+	(property "Reference" "REF**"
+		(at 0 -5.08 0)
+		(layer "F.SilkS")
+		(uuid "0c96f6a7-0df3-40c7-a7d0-768994acad59")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "EC10E 9mm"
+		(at 0 2.032 0)
+		(layer "F.Fab")
+		(uuid "867bd145-e76d-4858-9be8-6ee4e62f1833")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "770ec08b-e93a-4eeb-b894-11b3456a9f3d")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "20fd6c92-6ec8-4c7e-b5ca-532b35c050ff")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start 5.02 -4.32)
+		(end 5.02 -3.52)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "1fe829ec-98b0-4bb6-bc3c-c5c6c97ab7fd")
+	)
+	(fp_line
+		(start 0 1.524)
+		(end -0.508 2.032)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "92534a2c-26d9-419d-ac6a-7981c50f9989")
+	)
+	(fp_line
+		(start 0 1.524)
+		(end 0 3.302)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "3530ebd8-3a20-4bd6-8507-7a87dcf7de1d")
+	)
+	(fp_line
+		(start 0 1.524)
+		(end 0.508 2.032)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "Dwgs.User")
+		(uuid "edbff4ea-91b9-407d-a736-3bebe7935151")
+	)
+	(fp_line
+		(start -4.9 -4.2)
+		(end 4.9 -4.2)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "50bae78e-f475-4c17-8084-409c9655035e")
+	)
+	(fp_line
+		(start -4.9 0.95)
+		(end -4.9 -4.2)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "0628a916-b992-455f-81a7-5104f513cc1f")
+	)
+	(fp_line
+		(start 4.9 -4.2)
+		(end 4.9 0.95)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "f0452d07-2759-4cf0-91e5-ba6c073e140c")
+	)
+	(fp_line
+		(start 4.9 0.95)
+		(end -4.9 0.95)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "43376e46-509c-4e5a-92e8-6c7bf0c3a880")
+	)
+	(fp_text user "Shaft insert"
+		(at 0 3.302 0)
+		(unlocked yes)
+		(layer "Dwgs.User")
+		(uuid "3a17183a-0e4b-43fe-9b28-873377c6c24a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 -2 0)
+		(layer "F.Fab")
+		(uuid "0ff4a54f-bff5-4e8b-ab16-5be631300926")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "A" thru_hole circle
+		(at -2.5 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "90488848-7df5-4ae4-afaa-63cce0a483ad")
+	)
+	(pad "B" thru_hole circle
+		(at 0 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "eed9c3d5-6780-4198-b87e-f15cfa9354d9")
+	)
+	(pad "C" thru_hole circle
+		(at 2.5 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "89ea59e1-c3e7-4bac-a4cf-908ca5ce35b2")
+	)
+	(pad "MP" thru_hole oval
+		(at -4.8 -2 90)
+		(size 3.2 1.7)
+		(drill oval 2.5 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "8736dfae-525c-4d45-99ab-dcb6de1731ea")
+	)
+	(pad "MP" thru_hole oval
+		(at 4.8 -2 90)
+		(size 3.2 1.7)
+		(drill oval 2.5 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "e9e0fa69-b723-474f-b96c-d054affbd9ac")
+	)
+	(embedded_fonts no)
+	(model "${KICAD10_3RD_PARTY}/3dmodels/lib.3dshapes/EC10E1220501.STEP"
+		(offset
+			(xyz 0 -0.25 9)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -0)
+		)
+	)
+	(model "${KICAD10_3RD_PARTY}/3dmodels/lib.3dshapes/Sensei Scroll Wheel.step"
+		(offset
+			(xyz 0 -3.5 9)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -180 -0 -0)
+		)
+	)
+)
