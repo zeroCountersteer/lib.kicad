@@ -8,10 +8,16 @@
       "identifier": "com.github.zerocountersteer.lib-kicad",
       "type": "library",
       "author": {
-        "name": "zeroCountersteer"
+        "name": "zeroCountersteer",
+        "contact": {
+          "web": "https://github.com/zeroCountersteer/lib.KiCAD"
+        }
       },
       "maintainer": {
-        "name": "zeroCountersteer"
+        "name": "zeroCountersteer",
+        "contact": {
+          "web": "https://github.com/zeroCountersteer/lib.KiCAD"
+        }
       },
       "license": "Mixed; see LICENSE and THIRD_PARTY_NOTICES.md",
       "resources": {
@@ -20,13 +26,13 @@
       "kicad_version": "10.0",
       "versions": [
         {
-          "version": "0.1.0",
+          "version": "0.1.3",
           "status": "stable",
           "kicad_version": "10.0",
-          "download_url": "https://github.com/zeroCountersteer/lib.KiCAD/releases/download/v0.1.0/lib.KiCAD-0.1.0.zip",
-          "download_sha256": "577eaccc620600cef3db0f0f700aa316e8a17d2c0a4fa3cd66aead538ef2788f",
-          "download_size": 25994299,
-          "install_size": 172094913
+          "download_url": "https://github.com/zeroCountersteer/lib.KiCAD/releases/download/v0.1.3/lib.KiCAD-0.1.3.zip",
+          "download_sha256": "1158db07443a6768e5f8fc0c934354250a194bf02d772d967a9cb33faea9748c",
+          "download_size": 25994316,
+          "install_size": 172095083
         }
       ]
     }

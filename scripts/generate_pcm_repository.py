@@ -35,6 +35,10 @@ def main() -> int:
     args = parser.parse_args()
     package = json.loads(args.metadata.read_text(encoding="utf-8"))
     package.pop("$schema", None)
+    repository_web = "https://github.com/zeroCountersteer/lib.KiCAD"
+    for role in ("author", "maintainer"):
+        if role in package and "contact" not in package[role]:
+            package[role]["contact"] = {"web": repository_web}
     package["versions"] = []
     if args.releases_json and args.releases_json.is_file():
         releases = json.loads(args.releases_json.read_text(encoding="utf-8"))

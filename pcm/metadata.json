@@ -6,10 +6,16 @@
   "identifier": "com.github.zerocountersteer.lib-kicad",
   "type": "library",
   "author": {
-    "name": "zeroCountersteer"
+    "name": "zeroCountersteer",
+    "contact": {
+      "web": "https://github.com/zeroCountersteer/lib.KiCAD"
+    }
   },
   "maintainer": {
-    "name": "zeroCountersteer"
+    "name": "zeroCountersteer",
+    "contact": {
+      "web": "https://github.com/zeroCountersteer/lib.KiCAD"
+    }
   },
   "license": "Mixed; see LICENSE and THIRD_PARTY_NOTICES.md",
   "resources": {

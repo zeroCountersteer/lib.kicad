@@ -26,6 +26,8 @@ def main() -> int:
         raise ValueError("expected exactly one package")
     item = package["packages"][0]
     required(item, ["name", "description", "description_full", "identifier", "type", "author", "license", "resources", "versions"], "package")
+    required(item["author"], ["name", "contact"], "package author")
+    required(item.get("maintainer", {}), ["name", "contact"], "package maintainer")
     for version in item["versions"]:
         required(version, ["version", "status", "kicad_version", "download_url", "download_sha256", "download_size", "install_size"], "package version")
         if not isinstance(version["download_size"], int) or not isinstance(version["install_size"], int):
