@@ -1,8 +1,8 @@
 {
   "$schema": "https://go.kicad.org/pcm/schemas/v2",
   "name": "lib.KiCAD",
-  "description": "KiCad 10+ symbols, footprints and 3D models.",
-  "description_full": "A maintained personal KiCad library with original content and clearly documented third-party material. Includes audited Allwinner A33 and X-Powers AXP223 components derived from A33-MiniDev.",
+  "description": "KiCad 10+ symbols, footprints, 3D models and a reusable general project template.",
+  "description_full": "A maintained personal KiCad library with original content and clearly documented third-party material. Includes audited Allwinner A33 and X-Powers AXP223 components derived from A33-MiniDev, plus a blank BOM-ready project template with ISO page setup.",
   "identifier": "com.github.zerocountersteer.lib-kicad",
   "type": "library",
   "author": {

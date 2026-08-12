@@ -1,0 +1,15 @@
+(kicad_sch
+  (version 20260306)
+  (generator "eeschema")
+  (generator_version "10.0")
+  (uuid "2e07c17b-7b1a-4b65-b38b-75f117a093b2")
+  (paper "A4" portrait)
+  (title_block
+    (title "General Project")
+    (comment 1 "Add hierarchical subsystem sheets as the design grows")
+  )
+  (lib_symbols)
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)

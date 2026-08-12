@@ -72,6 +72,10 @@ def main() -> int:
         copy_tree(repo / "symbols", root / "symbols")
         copy_tree(repo / "footprints", root / "footprints")
         copy_tree(repo / "3dmodels", root / "3dmodels")
+        # Project starters are distributable library content. Keep them under
+        # their own namespace so installing the PCM package does not mix
+        # template files with KiCad's symbol/footprint/model libraries.
+        copy_tree(repo / "templates", root / "templates")
         metadata(template, args.version, root)
         for file in root.rglob("*"):
             if file.is_file() and any(token in file.read_text(encoding="utf-8", errors="ignore") for token in ("C:/Users/", "/home/", "Documents/GitHub/")):
