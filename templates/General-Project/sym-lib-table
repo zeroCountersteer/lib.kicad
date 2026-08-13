@@ -2,4 +2,6 @@
   (version 7)
   (lib (name "lib")(type "KiCad")(uri "${KIPRJMOD}/../../symbols/lib.kicad_sym")(options "")(descr "lib.KiCAD library"))
   (lib (name "Project_Generic")(type "KiCad")(uri "${KIPRJMOD}/../../symbols/Project_Generic.kicad_sym")(options "")(descr "BOM-ready generic project symbols"))
+  (lib (name "SoC_Allwinner")(type "KiCad")(uri "${KIPRJMOD}/../../symbols/SoC_Allwinner.kicad_sym")(options "")(descr "lib.KiCAD Allwinner symbols"))
+  (lib (name "PMIC_XPowers")(type "KiCad")(uri "${KIPRJMOD}/../../symbols/PMIC_XPowers.kicad_sym")(options "")(descr "lib.KiCAD X-Powers symbols"))
 )

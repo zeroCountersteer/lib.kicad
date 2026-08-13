@@ -35,6 +35,82 @@ jobs:
           name: kicad-pcm-test-package
           path: dist/
 
+  # Every merge to main publishes the current tree to one moving release.
+  # The package version still increases, so PCM can detect each update, while
+  # users never need to create or push a tag manually.
+  rolling:
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build rolling package
+        run: |
+          mkdir -p dist
+          VERSION="0.0.${GITHUB_RUN_NUMBER}"
+          python3 scripts/build_pcm_package.py \
+            --repo . \
+            --metadata pcm/metadata.json \
+            --version "$VERSION" \
+            --output "dist/lib.KiCAD-$VERSION.zip"
+
+      - name: Update rolling release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION="0.0.${GITHUB_RUN_NUMBER}"
+          if ! gh release view rolling >/dev/null 2>&1; then
+            gh release create rolling \
+              --target "$GITHUB_SHA" \
+              --title "lib.KiCAD rolling" \
+              --notes "Automatically updated from main."
+          else
+            gh release edit rolling --title "lib.KiCAD rolling" --notes "Automatically updated from main." --latest
+          fi
+          gh release upload rolling "dist/lib.KiCAD-$VERSION.zip" --clobber
+
+      - name: Collect release history
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --paginate --slurp \
+            "repos/${GITHUB_REPOSITORY}/releases?per_page=100" \
+            > dist/releases.json
+
+      - name: Generate rolling PCM index
+        run: |
+          mkdir -p site
+          VERSION="0.0.${GITHUB_RUN_NUMBER}"
+          python3 scripts/generate_pcm_repository.py \
+            --metadata pcm/metadata.json \
+            --output-dir site \
+            --version "$VERSION" \
+            --zip "dist/lib.KiCAD-$VERSION.zip" \
+            --asset-url "https://github.com/${GITHUB_REPOSITORY}/releases/download/rolling/lib.KiCAD-$VERSION.zip" \
+            --releases-json dist/releases.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          for name in ('repository.json', 'packages.json'):
+              json.loads((Path('site') / name).read_text())
+          PY
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
   release:
     if: ${{ startsWith(github.ref, 'refs/tags/v') }}
     runs-on: ubuntu-latest

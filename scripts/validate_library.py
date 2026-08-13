@@ -65,6 +65,9 @@ def main() -> int:
                     relative = model.split("/3dmodels/", 1)[1]
                     if f"3dmodels/{relative}" not in names:
                         raise AssertionError(f"package model reference does not resolve: {name}: {model}")
+            for table in ("fp-lib-table", "sym-lib-table"):
+                if table not in names:
+                    raise AssertionError(f"package library table is missing: {table}")
     print("A33: 282/282 balls, PG8=B16, PG9=A16")
     print("AXP223: pads 1..69, EP/GND=69, windowed exposed-pad paste")
     return 0

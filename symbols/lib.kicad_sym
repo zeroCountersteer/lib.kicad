@@ -33,7 +33,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "20455-030E-76:IPEX_20455-030E-76"
+		(property "Footprint" "lib:IPEX_20455-030E-76"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -848,7 +848,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "20455-040E-76:IPEX_20455-040E-76"
+		(property "Footprint" "lib:IPEX_20455-040E-76"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1843,7 +1843,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_DFN_QFN:AO_DFN-8-1EP_5.55x5.2mm_P1.27mm_EP4.12x4.6mm"
+		(property "Footprint" "lib:AO_DFN-8-1EP_5.55x5.2mm_P1.27mm_EP4.12x4.6mm"
 			(at 5.08 -1.905 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2324,7 +2324,7 @@
 				)
 			)
 		)
-		(property "Footprint" "VQFN20_RGR_TEX"
+		(property "Footprint" "lib:VQFN20_RGR_TEX"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2864,7 +2864,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PW24_TEX"
+		(property "Footprint" "lib:PW24_TEX"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12910,7 +12910,7 @@
 				)
 			)
 		)
-		(property "Footprint" "FBGA200_10X15X1_SAM"
+		(property "Footprint" "lib:FBGA200_10X15X1_SAM"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22373,7 +22373,7 @@
 				)
 			)
 		)
-		(property "Footprint" "WQFN38_REF_TEX"
+		(property "Footprint" "lib:WQFN38_REF_TEX"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)

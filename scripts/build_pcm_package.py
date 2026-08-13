@@ -39,6 +39,31 @@ def metadata(template: Path, version: str, package_root: Path) -> dict:
     return data
 
 
+def write_library_tables(package_root: Path) -> None:
+    """Ship tables so installed symbol footprint nicknames resolve locally."""
+    (package_root / "fp-lib-table").write_text(
+        """(fp_lib_table
+  (version 7)
+  (lib (name \"lib\")(type \"KiCad\")(uri \"${KIPRJMOD}/footprints/lib.pretty\")(options \"\")(descr \"lib.KiCAD footprints\"))
+  (lib (name \"Package_SoC\")(type \"KiCad\")(uri \"${KIPRJMOD}/footprints/Package_SoC.pretty\")(options \"\")(descr \"lib.KiCAD SoC footprints\"))
+  (lib (name \"Package_PMIC\")(type \"KiCad\")(uri \"${KIPRJMOD}/footprints/Package_PMIC.pretty\")(options \"\")(descr \"lib.KiCAD PMIC footprints\"))
+)
+""",
+        encoding="utf-8",
+    )
+    (package_root / "sym-lib-table").write_text(
+        """(sym_lib_table
+  (version 7)
+  (lib (name \"lib\")(type \"KiCad\")(uri \"${KIPRJMOD}/symbols/lib.kicad_sym\")(options \"\")(descr \"lib.KiCAD library\"))
+  (lib (name \"Project_Generic\")(type \"KiCad\")(uri \"${KIPRJMOD}/symbols/Project_Generic.kicad_sym\")(options \"\")(descr \"BOM-ready generic project symbols\"))
+  (lib (name \"SoC_Allwinner\")(type \"KiCad\")(uri \"${KIPRJMOD}/symbols/SoC_Allwinner.kicad_sym\")(options \"\")(descr \"lib.KiCAD Allwinner symbols\"))
+  (lib (name \"PMIC_XPowers\")(type \"KiCad\")(uri \"${KIPRJMOD}/symbols/PMIC_XPowers.kicad_sym\")(options \"\")(descr \"lib.KiCAD X-Powers symbols\"))
+)
+""",
+        encoding="utf-8",
+    )
+
+
 def write_zip(root: Path, output: Path) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
@@ -76,6 +101,7 @@ def main() -> int:
         # their own namespace so installing the PCM package does not mix
         # template files with KiCad's symbol/footprint/model libraries.
         copy_tree(repo / "templates", root / "templates")
+        write_library_tables(root)
         metadata(template, args.version, root)
         for file in root.rglob("*"):
             if file.is_file() and any(token in file.read_text(encoding="utf-8", errors="ignore") for token in ("C:/Users/", "/home/", "Documents/GitHub/")):

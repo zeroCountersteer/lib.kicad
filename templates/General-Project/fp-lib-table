@@ -1,4 +1,6 @@
 (fp_lib_table
   (version 7)
   (lib (name "lib")(type "KiCad")(uri "${KIPRJMOD}/../../footprints/lib.pretty")(options "")(descr "lib.KiCAD footprints"))
+  (lib (name "Package_SoC")(type "KiCad")(uri "${KIPRJMOD}/../../footprints/Package_SoC.pretty")(options "")(descr "lib.KiCAD SoC footprints"))
+  (lib (name "Package_PMIC")(type "KiCad")(uri "${KIPRJMOD}/../../footprints/Package_PMIC.pretty")(options "")(descr "lib.KiCAD PMIC footprints"))
 )
