@@ -60,7 +60,7 @@ jobs:
             --repo . \
             --metadata pcm/metadata.json \
             --version "$VERSION" \
-            --output "dist/lib.KiCAD-$VERSION.zip"
+            --output dist/lib.KiCAD-rolling.zip
 
       - name: Update rolling release
         env:
@@ -75,7 +75,9 @@ jobs:
           else
             gh release edit rolling --title "lib.KiCAD rolling" --notes "Automatically updated from main." --latest
           fi
-          gh release upload rolling "dist/lib.KiCAD-$VERSION.zip" --clobber
+          # Keep one moving asset; the PCM version in its metadata changes on
+          # every run, so KiCad still detects updates without accumulating ZIPs.
+          gh release upload rolling dist/lib.KiCAD-rolling.zip --clobber
 
       - name: Collect release history
         env:
@@ -93,8 +95,8 @@ jobs:
             --metadata pcm/metadata.json \
             --output-dir site \
             --version "$VERSION" \
-            --zip "dist/lib.KiCAD-$VERSION.zip" \
-            --asset-url "https://github.com/${GITHUB_REPOSITORY}/releases/download/rolling/lib.KiCAD-$VERSION.zip" \
+            --zip dist/lib.KiCAD-rolling.zip \
+            --asset-url "https://github.com/${GITHUB_REPOSITORY}/releases/download/rolling/lib.KiCAD-rolling.zip" \
             --releases-json dist/releases.json
           python3 - <<'PY'
           import json

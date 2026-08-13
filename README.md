@@ -39,7 +39,7 @@ The tag workflow validates the library, builds `lib.KiCAD-0.1.0.zip`, creates th
 
 `https://zerocountersteer.github.io/lib.KiCAD/repository.json`
 
-In KiCad 10, open Preferences → Manage Plugin and Content Manager → Manage Repositories, add that URL, and refresh. The update flow is: push to `main` → GitHub rebuilds the moving `rolling` release → Pages index updates → KiCad sees the new version. Stable immutable releases still use the tag flow above. The rolling package is versioned as `0.0.<GitHub run number>` so every push is a real PCM update while the download remains under the single `rolling` release.
+In KiCad 10, open Preferences → Manage Plugin and Content Manager → Manage Repositories, add that URL, and refresh. The update flow is: push to `main` → GitHub rebuilds the moving `rolling` release → Pages index updates → KiCad sees the new version. Stable immutable releases still use the tag flow above. The rolling package is versioned as `0.0.<GitHub run number>` so every push is a real PCM update. The ZIP is always uploaded as the single `lib.KiCAD-rolling.zip` asset in the moving `rolling` release, so the release does not accumulate one asset per update.
 
 Enable Settings → Pages once in the GitHub repository, choose **GitHub Actions** as the source, and keep the `github-pages` environment available. No package ZIP is copied to Pages; it remains an immutable Release asset.
 
