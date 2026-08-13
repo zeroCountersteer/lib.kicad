@@ -24,7 +24,7 @@ jobs:
       - name: Build test package
         run: |
           mkdir -p dist
-          VERSION="0.0.${GITHUB_RUN_NUMBER}"
+          VERSION="0.99.${GITHUB_RUN_NUMBER}"
           python3 scripts/build_pcm_package.py \
             --repo . \
             --metadata pcm/metadata.json \
@@ -55,7 +55,7 @@ jobs:
       - name: Build rolling package
         run: |
           mkdir -p dist
-          VERSION="0.0.${GITHUB_RUN_NUMBER}"
+          VERSION="0.99.${GITHUB_RUN_NUMBER}"
           python3 scripts/build_pcm_package.py \
             --repo . \
             --metadata pcm/metadata.json \
@@ -66,7 +66,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          VERSION="0.0.${GITHUB_RUN_NUMBER}"
+          VERSION="0.99.${GITHUB_RUN_NUMBER}"
           if ! gh release view rolling >/dev/null 2>&1; then
             gh release create rolling \
               --target "$GITHUB_SHA" \
@@ -90,7 +90,7 @@ jobs:
       - name: Generate rolling PCM index
         run: |
           mkdir -p site
-          VERSION="0.0.${GITHUB_RUN_NUMBER}"
+          VERSION="0.99.${GITHUB_RUN_NUMBER}"
           python3 scripts/generate_pcm_repository.py \
             --metadata pcm/metadata.json \
             --output-dir site \
